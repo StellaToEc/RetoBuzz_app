@@ -1,0 +1,40 @@
+<div class="fondo-color">
+    <br>
+    <h1 style="text-align:center;color:white;">{{titulo}}</h1>
+    <br>
+</div>
+<br>
+<div class="container">
+    <form>
+        <div class="input-group">
+            <input type="search" class="form-control rounded" placeholder="Buscar" name="data" id="data" [(ngModel)]="data" required>
+            <button type="button" class="btn btn-outline-primary" (click)="filtro()">Buscar</button>
+            <button type="button" class="btn btn-outline-secondary" (click)="ngOnInit()">Limpiar</button>
+        </div>  
+    </form>    
+</div>
+<br>
+<div class="container">
+    <button type="button" class="btn btn-success" [routerLink]="['/usuarios/form']">Nuevo Usuario</button>
+</div>
+<br>
+<div class="container"> 
+    <table class="table table-sm">
+        <thead class="table-secondary" style="text-align:center">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let usuario of usuarios">
+                <th scope="row">{{usuario.id}}</th>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.email}}</td>
+                <td><div style="text-align:center"><button type="button" class="btn btn-outline-danger" (click)="delete(usuario)">Borrar</button></div></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

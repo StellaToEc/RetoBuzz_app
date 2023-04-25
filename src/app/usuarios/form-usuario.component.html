@@ -1,0 +1,23 @@
+<div class="fondo-color">
+    <br>
+    <h1 style="text-align:center;color:white;">{{titulo}}</h1>
+    <br>
+</div>
+<br>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" id="nameAdd" placeholder="Name" [(ngModel)]="usuario.name" name="username">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="emailAdd" placeholder="name@example.com" [(ngModel)]="usuario.email" name="email">
+        </div>
+        <br>
+        <div class="container" style="text-align:center"> 
+            <button type="submit" class="btn btn-success" role="button" (click)="create()">Agregar</button>
+        </div>
+    </form>
+</div>
